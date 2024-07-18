@@ -1,6 +1,4 @@
-﻿@{
-    bool allowEdit = Context.Request.Query["allowEdit"] == "True";
-}
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,19 +12,6 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Report Designer</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        @if (!allowEdit)
-                        {
-                            <a href="@Url.Action("Index", "Edit", new { allowEdit = true })" class="btn btn-primary">
-                                Edit Report
-                            </a>
-                        }
-                      
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
     <div class="">
