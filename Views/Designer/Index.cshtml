@@ -1,0 +1,81 @@
+﻿@using Stimulsoft.Report.Mvc
+@using Stimulsoft.Report.Web
+@using Stimulsoft.Report.Design
+
+@{
+  ViewBag.Title = "Index";
+}
+
+<div >
+    @Html.StiNetCoreDesigner(new StiNetCoreDesignerOptions
+    {
+    Actions = {
+    GetReport = "GetReport",
+    OpenReport="OpenReport",
+    DesignerEvent = "DesignerEvent"
+    },
+    PropertiesGrid = {
+    Visible = false
+    },
+    FileMenu = {
+    Visible = false,
+    ShowReportSetup=false
+    },
+    Dictionary = {
+    Visible = false,
+    },
+    Toolbar = {
+    ShowToolbar = false,
+    ShowSetupToolboxButton =false,
+    },
+    Pages = {
+    ShowNewPageButton = false
+
+    },
+    Dashboards = {
+    ShowNewDashboardButton = false
+    },
+    Appearance =
+    {
+    ShowReportTree= false
+    },
+    Bands ={
+    ShowReportTitleBand = false,
+    ShowReportSummaryBand= false,
+    ShowPageHeaderBand= false,
+    ShowPageFooterBand= false,
+    ShowGroupHeaderBand= false,
+    ShowGroupFooterBand= false,
+    ShowHeaderBand= false,
+    ShowFooterBand= false,
+    ShowColumnHeaderBand= false,
+    ShowColumnFooterBand= false,
+    ShowDataBand= false,
+    ShowHierarchicalBand= false,
+    ShowChildBand= false,
+    ShowEmptyBand= false,
+    ShowOverlayBand= false,
+    ShowTableOfContents= false,
+    },
+    CrossBands ={
+    ShowCrossGroupHeaderBand= false,
+    ShowCrossGroupFooterBand= false,
+    ShowCrossHeaderBand= false,
+    ShowCrossFooterBand= false,
+    ShowCrossDataBand= false,
+    },
+    Components ={
+    ShowText = false,
+    ShowTextInCells= false,
+    ShowRichText= false,
+    ShowImage= false,
+    ShowBarCode= false,
+    ShowShape= false,
+    ShowHorizontalLinePrimitive= false,
+    },
+
+
+    Height = Stimulsoft.System.Web.UI.WebControls.Unit.Pixel(600)
+})
+
+</div>

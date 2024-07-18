@@ -1,0 +1,21 @@
+﻿@using Stimulsoft.Report.Mvc
+@using Stimulsoft.Report.Web
+@using Stimulsoft.Report.Design
+
+@{
+    bool allowEdit = Context.Request.Query["allowEdit"] == "True";
+    ViewBag.Title = "Edit Report";
+}
+
+@if (allowEdit)
+{
+    @Html.StiNetCoreDesigner(new StiNetCoreDesignerOptions
+{
+    Actions =
+        {
+        GetReport = "GetReport",
+        DesignerEvent = "DesignerEvent"
+        },
+    Height = Stimulsoft.System.Web.UI.WebControls.Unit.Pixel(600)
+})
+}
