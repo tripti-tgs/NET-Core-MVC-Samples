@@ -1,80 +1,115 @@
 ﻿@using Stimulsoft.Report.Mvc
 @using Stimulsoft.Report.Web
 @using Stimulsoft.Report.Design
-
+@using Newtonsoft.Json
 @{
   ViewBag.Title = "Index";
 }
 
-<div >
-    @Html.StiNetCoreDesigner(new StiNetCoreDesignerOptions
-    {
+@Html.StiNetCoreDesigner("StiWebDesigner1", new StiNetCoreDesignerOptions {
     Actions = {
-    GetReport = "GetReport",
-    DesignerEvent = "DesignerEvent"
-    },
-    PropertiesGrid = {
-    Visible = false
-    },
-    FileMenu = {
-    Visible = false,
-    ShowReportSetup=false
-    },
-    Dictionary = {
-    Visible = false,
-    },
-    Toolbar = {
-    ShowToolbar = false,
-    ShowSetupToolboxButton =false,
-    },
-    Pages = {
-    ShowNewPageButton = false
+        GetReport = "GetReport",
+        DesignerEvent = "DesignerEvent"
+      },
+      PropertiesGrid = {
+        Visible = false
+      },
+      FileMenu = {
+        Visible = false,
+        ShowReportSetup = false
+      },
+      Dictionary = {
+        Visible = false,
+      },
+      Toolbar = {
+        ShowToolbar = false,
+        ShowSetupToolboxButton = false,
+        
+      },
+      Pages = {
+        ShowNewPageButton = false
 
-    },
-    Dashboards = {
-    ShowNewDashboardButton = false
-    },
-    Appearance =
-    {
-    ShowReportTree= false
-    },
-    Bands ={
-    ShowReportTitleBand = false,
-    ShowReportSummaryBand= false,
-    ShowPageHeaderBand= false,
-    ShowPageFooterBand= false,
-    ShowGroupHeaderBand= false,
-    ShowGroupFooterBand= false,
-    ShowHeaderBand= false,
-    ShowFooterBand= false,
-    ShowColumnHeaderBand= false,
-    ShowColumnFooterBand= false,
-    ShowDataBand= false,
-    ShowHierarchicalBand= false,
-    ShowChildBand= false,
-    ShowEmptyBand= false,
-    ShowOverlayBand= false,
-    ShowTableOfContents= false,
-    },
-    CrossBands ={
-    ShowCrossGroupHeaderBand= false,
-    ShowCrossGroupFooterBand= false,
-    ShowCrossHeaderBand= false,
-    ShowCrossFooterBand= false,
-    ShowCrossDataBand= false,
-    },
-    Components ={
-    ShowText = false,
-    ShowTextInCells= false,
-    ShowRichText= false,
-    ShowImage= false,
-    ShowBarCode= false,
-    ShowShape= false,
-    ShowHorizontalLinePrimitive= false,
-    },
+      },
+      Dashboards = {
+        ShowNewDashboardButton = false
+      },
+      Appearance = {
+        ShowReportTree = false,
+      },
+      Bands = {
+        ShowReportTitleBand = false,
+        ShowReportSummaryBand = false,
+        ShowPageHeaderBand = false,
+        ShowPageFooterBand = false,
+        ShowGroupHeaderBand = false,
+        ShowGroupFooterBand = false,
+        ShowHeaderBand = false,
+        ShowFooterBand = false,
+        ShowColumnHeaderBand = false,
+        ShowColumnFooterBand = false,
+        ShowDataBand = false,
+        ShowHierarchicalBand = false,
+        ShowChildBand = false,
+        ShowEmptyBand = false,
+        ShowOverlayBand = false,
+        ShowTableOfContents = false,
+      },
+      CrossBands = {
+        ShowCrossGroupHeaderBand = false,
+        ShowCrossGroupFooterBand = false,
+        ShowCrossHeaderBand = false,
+        ShowCrossFooterBand = false,
+        ShowCrossDataBand = false,
+      },
+      Components = {
+        ShowText = false,
+        ShowTextInCells = false,
+        ShowRichText = false,
+        ShowImage = false,
+        ShowBarCode = false,
+        ShowShape = false,
+        ShowMap=false,
+        ShowChart=false,
+        ShowGauge=false,
+        ShowHorizontalLinePrimitive =false,
+        ShowVerticalLinePrimitive=false,
+        ShowRectanglePrimitive=false,
+        ShowRoundedRectanglePrimitive=false,
+        ShowSparkline=false,
+        ShowCrossTab=false,
+        ShowTable=false,
+        ShowClone=false,
+        ShowPanel=false,
+        ShowCheckBox=false,
+        ShowSubReport=false,
+        ShowZipCode=false,
+      },
 
+      Height = Stimulsoft.System.Web.UI.WebControls.Unit.Pixel(600),
 
-    Height = Stimulsoft.System.Web.UI.WebControls.Unit.Pixel(600)
-})
+  
+  })
 
-</div>
+  <script >
+  jsStiWebDesigner1.onready = function () {
+    //1
+    console.log(jsStiWebDesigner1)
+    jsStiWebDesigner1.options.toolBar.changeVisibleState(false);
+    jsStiWebDesigner1.options.toolBar.remove();
+
+    jsStiWebDesigner1.options.workPanel.changeVisibleState(false);
+    jsStiWebDesigner1.options.workPanel.remove();
+
+    //2
+    jsStiWebDesigner1.InitializeComponentContextMenu = function () {}
+
+    //3
+    jsStiWebDesigner1.InitializeRenamePageForm = function () {};
+
+    //4
+    jsStiWebDesigner1.InitializePageContextMenu = function () {};
+
+    //5
+    jsStiWebDesigner1.InitializePageSetupForm = function () {};
+  } 
+  </script> 
